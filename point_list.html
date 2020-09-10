@@ -1,0 +1,266 @@
+<!--
+1. 로그인 , 회원가입, 아이디찾기, 비밀번호 찾기
+
+2. 이름 콤마 구분으로 다수 입력가능
+
+3. (+) 추가시 계속 추가 가능
+
+4. 내가 지금까지 줬던 내역 보유
+
+5. 최근에 줬던 사람 슬라이드로 보여주기
+
+-->
+
+<!doctype html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="img/logo/favicon.ico">
+
+    <title>비플 - 땡큐 포인트내역</title>
+
+    <link href="css/reset.css" rel="stylesheet">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css"
+        integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
+
+</head>
+
+<style>
+    .searchbar {
+        height: 55px;
+    }
+
+    .searchbar input {
+        border: 1px solid black;
+        -webkit-box-shadow: 7px 13px 18px -16px rgba(0, 0, 0, 1);
+        -moz-box-shadow: 7px 13px 18px -16px rgba(0, 0, 0, 1);
+        box-shadow: 7px 13px 18px -16px rgba(0, 0, 0, 1);
+    }
+
+    input[type="radio"] {
+        display: none;
+    }
+
+    input[type="radio"]+label {
+        font-family: Arial, sans-serif;
+    }
+
+    input[type="radio"]+label span {
+        display: inline-block;
+        width: 19px;
+        height: 19px;
+        margin: -2px 10px 0 0;
+        vertical-align: middle;
+        background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/210284/check_radio_sheet.png) -38px top no-repeat;
+        cursor: pointer;
+    }
+
+    input[type="radio"]:checked+label span {
+        background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/210284/check_radio_sheet.png) -57px top no-repeat;
+    }
+
+    .pointDiv {
+        padding: .5rem;
+        font-size: 1.2rem;
+    }
+
+    #selectedNameList li {
+        height: 30px;
+        padding: .25rem;
+        font-size: .875rem;
+        background: #f7f7f7;
+    }
+
+    .w-30 {
+        width: 33.3%
+    }
+
+    .f-1 {
+        font-size: 1rem;
+        color: white;
+    }
+
+    .f-12 {
+        font-size: 1.2rem;
+        color: white;
+    }
+
+    .f-15 {
+        font-size: 1.5rem;
+        color: white;
+    }
+
+    .f-2 {
+        padding: 1.2rem 1rem 1rem 1rem;
+        font-size: 2rem;
+        color: #343A40;
+    }
+
+    .fc-black {
+        color: black;
+    }
+
+    .fc-red {
+        color: red;
+    }
+
+    .fc-blue {
+        color: blue;
+    }
+
+    .pointer {
+        cursor: pointer;
+    }
+
+    .display-5 {
+        font-size: 3.5rem;
+        font-weight: 300;
+        line-height: 1.2;
+    }
+
+    @media (min-width: 320px) and (max-width: 480px) {
+
+        /*320px에서 480px 사이*/
+        body {
+            font-size: .875rem;
+        }
+
+        .display-5 {
+            font-size: 2rem;
+            font-weight: 300;
+            line-height: 1.2;
+        }
+
+        .f-875 {
+            font-size: .875rem;
+        }
+
+        input::placeholder {
+            font-size: .575rem;
+        }
+    }
+
+
+    .point-card-box {
+        height: 100px;
+        border-radius: 5px;
+        border: 1px solid #343A40;
+    }
+</style>
+
+<body>
+    <div class="container">
+        <nav class="navbar navbar-expand-lg navbar-light ">
+            <a class="navbar-brand" href="#"><img src="img/logo/thku.png" alt="" height="40"></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="main.html">포인트주기 <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="point_list.html">포인트내역</a>
+                    </li>
+                    <!--
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Dropdown
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="#">Action</a>
+                        <a class="dropdown-item" href="#">Another action</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">Something else here</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link disabled" href="#">Disabled</a>
+                </li>
+                -->
+                </ul>
+                <form class="form-inline my-2 my-lg-0">
+                    <a class="text-muted pr-1" href="#">이태웅님 </a>
+                    <a class="btn btn-sm btn-outline-secondary" href="#">로그아웃</a>
+                </form>
+            </div>
+        </nav>
+
+        <div class="mb-5 p-sm-3 p-md-5 p-xs-5 text-white rounded bg-dark d-flex">
+            <div class="col-6">
+                <p class="my-3 small">이달 사용가능 포인트</p>
+                <h1 class="display-5 display-6">10,000 <i class="fab fa-product-hunt f-15 f-875"></i></h1>
+                <!--
+                    <p class="lead mb-0"><a href="#" class="text-white font-weight-bold">Continue reading...</a></p>
+                -->
+            </div>
+            <div class="col-6">
+                <p class="my-3 small">총 누적 포인트</p>
+                <h1 class="display-5 display-6 ">110,000 <i class="fab fa-product-hunt f-15 f-875"></i></h1>
+            </div>
+        </div>
+
+
+        <!-- ############################################################################################################################################################ -->
+
+        <div class="row">
+            <div class="col-12">
+                <div class="list-group">
+                    <a href="#"
+                        class="list-group-item list-group-item-action flex-column align-items-start mb-2 border-radius">
+                        <div class="d-flex w-100 justify-content-between">
+                            <h6 class="mb-1">이태웅 주임 <i class="fas f-12 fa-long-arrow-alt-right fc-blue"></i></i> 서인석 부장
+                            </h6>
+                            <small>2020-09-04 00:00:00</small>
+                        </div>
+                        <p class="mb-1 fc-blue f-15">-3,000P</p>
+                        <small>고맙습니다 고맙습니다 고맙습니다 고맙습니다 고맙습니다 고맙습니다 고맙습니다</small>
+                    </a>
+                    <a href="#"
+                        class="list-group-item list-group-item-action flex-column align-items-start mb-2 border-radius">
+                        <div class="d-flex w-100 justify-content-between">
+                            <h6 class="mb-1">이태웅 주임 <i class="fas f-12 fa-long-arrow-alt-left fc-red"></i></i> 정용민 대리
+                            </h6>
+                            <small class="text-muted">2020-09-04 00:00:00</small>
+                        </div>
+                        <p class="mb-1 fc-red f-15">+2,000P</p>
+                        <small>고맙습니다 고맙습니다 고맙습니다 고맙습니다 고맙습니다 고맙습니다 고맙습니다</small>
+                    </a>
+                    <a href="#"
+                        class="list-group-item list-group-item-action flex-column align-items-start mb-2 border-radius">
+                        <div class="d-flex w-100 justify-content-between">
+                            <h6 class="mb-1">이태웅 주임 <i class="fas f-12 fa-long-arrow-alt-right fc-blue"></i></i> 서아인 대리
+                            </h6>
+                            <small class="text-muted">2020-09-04 00:00:00</small>
+                        </div>
+                        <p class="mb-1 fc-blue f-15">-1,500P</p>
+                        <small>고맙습니다 고맙습니다 고맙습니다 고맙습니다 고맙습니다 고맙습니다 고맙습니다</small>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+</body>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+    integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+    crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+    integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+    crossorigin="anonymous"></script>
+
+</html>
