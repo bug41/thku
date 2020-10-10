@@ -146,9 +146,14 @@ input[type="radio"]:checked+label span {
 	cursor: pointer;
 }
 
-.active {
+.tab_active {
+	color:black;
 	font-weight: 800;
 	border-bottom: 2px solid #EA5455;
+}
+
+.tab_active:hover{
+	color:black;	
 }
 
 .point-card-box {

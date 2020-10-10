@@ -15,7 +15,10 @@
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css"
         integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
-
+    
+    
+     <link href="https://unpkg.com/gijgo@1.9.13/css/gijgo.min.css" rel="stylesheet" type="text/css" />
+    
 </head>
 
 <style>
@@ -35,29 +38,12 @@
                     <li class="nav-item ">
                         <a class="nav-link" href="main.html">땡큐포인트 <span class="sr-only">(current)</span></a>
                     </li>
-                    <li class="nav-item active">
+                    <li class="nav-item tab_active">
                         <a class="nav-link" href="point_list.html">나의 내역</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="tp_admin.html">관리자메뉴</a>
-                    </li>
-                    <!--
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Dropdown
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="#">Action</a>
-                        <a class="dropdown-item" href="#">Another action</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">Something else here</a>
-                    </div>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link disabled" href="#">Disabled</a>
-                </li>
-                -->
+                    </li>                   
                 </ul>
                 <form class="form-inline my-2 my-lg-0">
                     <a class="text-muted pr-1" href="#">이태웅님 </a>
@@ -79,14 +65,28 @@
                 <h1 class="display-5 display-6 ">110,000 <i class="fab fa-product-hunt f-15 f-875"></i></h1>
             </div>
         </div>
-
-
+        
         <!-- ############################################################################################################################################################ -->
-
+       
         <div class="row">
+            <div class="col-md-6 col-xs-9 h4 text-center mt-1">2020년 10월 포인트 내역</div>
+            <div class="col-md-6 col-xs-3">
+                <div class="input-group mb-3">
+                    <input type="month" class="form-control" value="2020-10">
+                    <div class="input-group-append">
+                      <span class="input-group-text pointer" onclick="">조회하기</span>
+                    </div>
+                  </div>                                  
+
+                  <div class="text-right p-2 mb-1">
+                    <a href="#" class="fc-black p-2 tab_active">전체(100)</a>
+                    <a href="#" class="fc-black p-2">지급내역(65)</a>
+                    <a href="#" class="fc-black p-2">습득내역(35)</a>
+                  </div>
+            </div>
             <div class="col-12">
-                <div class="list-group">
-                    <a href="#"
+                    <div class="list-group">
+                        <a href="#"
                         class="list-group-item list-group-item-action flex-column align-items-start mb-2 border-radius">
                         <div class="d-flex w-100 justify-content-between">
                             <h6 class="mb-1"><i class="fas fa-user"></i> 이태웅 주임 <i
@@ -122,7 +122,71 @@
                         <p class="mb-1 fc-blue f-15">-1,500P</p>
                         <small>고맙습니다 고맙습니다 고맙습니다 고맙습니다 고맙습니다 고맙습니다 고맙습니다</small>
                     </a>
+                    <a href="#"
+                        class="list-group-item list-group-item-action flex-column align-items-start mb-2 border-radius">
+                        <div class="d-flex w-100 justify-content-between">
+                            <h6 class="mb-1"><i class="fas fa-user"></i> 이태웅 주임 <i
+                                    class="fas f-12 fa-long-arrow-alt-right fc-blue"></i></i> <i
+                                    class="fas fa-user"></i> 서아인 대리
+                            </h6>
+                            <small class="text-muted">2020-09-04 00:00:00</small>
+                        </div>
+                        <p class="mb-1 fc-blue f-15">-1,500P</p>
+                        <small>고맙습니다 고맙습니다 고맙습니다 고맙습니다 고맙습니다 고맙습니다 고맙습니다</small>
+                    </a>
+                    <a href="#"
+                        class="list-group-item list-group-item-action flex-column align-items-start mb-2 border-radius">
+                        <div class="d-flex w-100 justify-content-between">
+                            <h6 class="mb-1"><i class="fas fa-user"></i> 이태웅 주임 <i
+                                    class="fas f-12 fa-long-arrow-alt-right fc-blue"></i></i> <i
+                                    class="fas fa-user"></i> 서아인 대리
+                            </h6>
+                            <small class="text-muted">2020-09-04 00:00:00</small>
+                        </div>
+                        <p class="mb-1 fc-blue f-15">-1,500P</p>
+                        <small>고맙습니다 고맙습니다 고맙습니다 고맙습니다 고맙습니다 고맙습니다 고맙습니다</small>
+                    </a>
+                    <a href="#"
+                        class="list-group-item list-group-item-action flex-column align-items-start mb-2 border-radius">
+                        <div class="d-flex w-100 justify-content-between">
+                            <h6 class="mb-1"><i class="fas fa-user"></i> 이태웅 주임 <i
+                                    class="fas f-12 fa-long-arrow-alt-right fc-blue"></i></i> <i
+                                    class="fas fa-user"></i> 서아인 대리
+                            </h6>
+                            <small class="text-muted">2020-09-04 00:00:00</small>
+                        </div>
+                        <p class="mb-1 fc-blue f-15">-1,500P</p>
+                        <small>고맙습니다 고맙습니다 고맙습니다 고맙습니다 고맙습니다 고맙습니다 고맙습니다</small>
+                    </a>
+                    <a href="#"
+                        class="list-group-item list-group-item-action flex-column align-items-start mb-2 border-radius">
+                        <div class="d-flex w-100 justify-content-between">
+                            <h6 class="mb-1"><i class="fas fa-user"></i> 이태웅 주임 <i
+                                    class="fas f-12 fa-long-arrow-alt-right fc-blue"></i></i> <i
+                                    class="fas fa-user"></i> 서아인 대리
+                            </h6>
+                            <small class="text-muted">2020-09-04 00:00:00</small>
+                        </div>
+                        <p class="mb-1 fc-blue f-15">-1,500P</p>
+                        <small>고맙습니다 고맙습니다 고맙습니다 고맙습니다 고맙습니다 고맙습니다 고맙습니다</small>
+                    </a>                    
                 </div>
+                
+                <nav>
+                    <ul class="pagination justify-content-center">
+                      <li class="page-item disabled">
+                        <a class="page-link" href="#" tabindex="-1" aria-disabled="true">이전</a>
+                      </li>
+                      <li class="page-item"><a class="page-link" href="#">1</a></li>
+                      <li class="page-item active" aria-current="page">
+                        <a class="page-link" href="#">2 <span class="sr-only">(current)</span></a>
+                      </li>
+                      <li class="page-item"><a class="page-link" href="#">3</a></li>
+                      <li class="page-item">
+                        <a class="page-link" href="#">다음</a>
+                      </li>
+                    </ul>
+                </nav>
             </div>
         </div>
 
