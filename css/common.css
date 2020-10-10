@@ -1,0 +1,158 @@
+.searchbar {
+	height: 55px !important;
+}
+
+.searchbar input {
+	border: 1px solid black;
+	/* -webkit-box-shadow: 7px 13px 18px -16px rgba(0, 0, 0, 1);
+	-moz-box-shadow: 7px 13px 18px -16px rgba(0, 0, 0, 1);
+	box-shadow: 7px 13px 18px -16px rgba(0, 0, 0, 1); */
+}
+
+input[type="radio"] {
+	display: none;
+}
+
+input[type="radio"]+label {
+	font-family: Arial, sans-serif;
+}
+
+input[type="radio"]+label span {
+	display: inline-block;
+	width: 19px;
+	height: 19px;
+	margin: -2px 10px 0 0;
+	vertical-align: middle;
+	background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/210284/check_radio_sheet.png) -38px top no-repeat;
+	cursor: pointer;
+}
+
+input[type="radio"]:checked+label span {
+	background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/210284/check_radio_sheet.png) -57px top no-repeat;
+}
+
+.pointDiv {
+	padding: .5rem;
+	font-size: 1.2rem;
+}
+
+#selectedNameList li {
+	height: 30px;
+	padding: .25rem;
+	font-size: .875rem;
+	background: #f7f7f7;
+}
+
+.display-5 {
+	font-size: 3.5rem;
+	font-weight: 300;
+	line-height: 1.2;
+}
+
+@media (min-width: 320px) and (max-width: 480px) {
+
+	/*320px에서 480px 사이*/
+	body {
+		font-size: .875rem;
+	}
+
+	.display-5 {
+		font-size: 2rem;
+		font-weight: 300;
+		line-height: 1.2;
+	}
+
+	.f-875 {
+		font-size: .875rem;
+	}
+
+	input::placeholder {
+		font-size: .575rem;
+	}
+}
+
+.point_list_all {
+	height: 370px;
+	padding: 15px 0 15px 0;
+	border: 1px solid #343a40;
+	overflow-y: scroll;
+}
+
+.section_title {
+	font-size: 20px;
+	font-weight: 700;
+}
+
+.searched_name_box {
+	width: 200px;
+	padding: 5px;
+	border: 1px solid #343a40;
+	background: white;
+	position: absolute;
+	z-index: 999;
+}
+
+.searched_name_ul {
+	font-size: 0.875rem;
+}
+
+.searched_name_ul li {
+	padding: 5px;
+}
+
+
+.w-30 {
+	width: 33.3%
+}
+
+.f-1 {
+	font-size: 1rem;
+	color: white;
+}
+
+.f-12 {
+	font-size: 1.2rem;
+	color: white;
+}
+
+.f-15 {
+	font-size: 1.5rem;
+	color: white;
+}
+
+.f-2 {
+	padding: 1.2rem 1rem 1rem 1rem;
+	font-size: 2rem;
+	color: #343A40;
+}
+
+.fc-black {
+	color: black;
+}
+
+.fc-black:hover {
+	color: black;
+}
+
+.fc-red {
+	color: red;
+}
+
+.fc-blue {
+	color: blue;
+}
+
+.pointer {
+	cursor: pointer;
+}
+
+.active {
+	font-weight: 800;
+	border-bottom: 2px solid #EA5455;
+}
+
+.point-card-box {
+	height: 100px;
+	border-radius: 5px;
+	border: 1px solid #343A40;
+}
