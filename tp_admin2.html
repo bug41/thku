@@ -17,7 +17,12 @@
         integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
 
 </head>
-
+<style>
+    #earn-point-list{
+        width:100% !important;
+        overflow-x:scroll;
+    }    
+</style>
 <body>
     <div class="container">
         <nav class="navbar navbar-expand-lg navbar-light ">
@@ -47,18 +52,22 @@
         </nav>
 
         <div class="row">
-        <div class="col-md-6 col-xs-9 h4 text-center mt-1">2020년 10월 지급포인트 내역</div>
+        <div class="col-md-6 col-xs-9 h4 text-center mt-1">2020년 습득포인트 내역</div>
         <div class="col-md-6 col-xs-3">
-            <div class="input-group mb-3">
-                <input type="month" class="form-control" value="2020-10">
+            <div class="input-group mb-3">                
+                <select id="" class="form-control">
+                    <option value="2020">2020년</option>
+                    <option value="2019">2019년</option>
+                    <option value="2018">2018년</option>
+                </select>
                 <div class="input-group-append">
                   <span class="input-group-text pointer" onclick="">조회하기</span>
                 </div>
               </div>                                  
 
               <div class="text-right p-2 mb-1">                
-                <a href="tp_admin.html" class="fc-black p-2 tab_active">지급 Point</a>
-                <a href="tp_admin2.html" class="fc-black p-2">습득 Point</a>
+                <a href="tp_admin.html" class="fc-black p-2 ">지급 Point</a>
+                <a href="tp_admin2.html" class="fc-black p-2 tab_active">습득 Point</a>
               </div>
         </div>
     </div>
@@ -66,62 +75,111 @@
     <!-- ############################################################################################################################################################ -->
     <div class="container mt-3">
         <div class="row">           
-            <div class="col-12">
-                <table class="table table-striped">
-                    
+            <div id="earn-point-list" class="">
+                <table class="table table-striped small">                    
                     <thead>
                         <tr>
-                            <th scope="col">#</th>
-                            <th scope="col">부서/팀</th>
-                            <th scope="col">이름</th>
-                            <th scope="col">총 지급</th>
-                            <th scope="col">당월 지급인원</th>
-                            <th scope="col">잔여</th>
+                            <th scope="col" colspan="2" class="text-center">2020년</th>                            
+                            <th scope="col">1월 누적</th>
+                            <th scope="col">2월 누적</th>
+                            <th scope="col">3월 누적</th>
+                            <th scope="col">4월 누적</th>
+                            <th scope="col">5월 누적</th>
+                            <th scope="col">6월 누적</th>
+                            <th scope="col">7월 누적</th>
+                            <th scope="col">8월 누적</th>
+                            <th scope="col">9월 누적</th>
+                            <th scope="col">현금지급</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <th scope="row">1</th>
+                        <tr>                            
+                            <td>경영진</td>
+                            <td>이태웅</td>
+                            <td>84,800P</td>
+                            <td>2,000P</td>
+                            <td>2,000P</td>
+                            <td>2,000P</td>
+                            <td>2,000P</td>
+                            <td>2,000P</td>
+                            <td>2,000P</td>
+                            <td>2,000P</td>
+                            <td>2,000P</td>
+                            <td>2,000P</td>
+                            <td>2,000P</td>
+                            <td>8,000P</td>
+                            <td><button type="button" class="btn btn-sm btn-dark">지급</button></td>
+                        </tr>
+                        <tr>                            
                             <td>경영진</td>
                             <td>이태웅</td>
                             <td>2,000P</td>
-                            <td>2명 
-                                <!-- <button type="button" class="btn btn-sm btn-primary" data-id="1" data-toggle="modal" data-target="#detail_point_popup">상세내역</button> -->
-                            </td>
-                            <td>8,000P</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">1</th>
-                            <td>경영진</td>
-                            <td>이태웅</td>
                             <td>2,000P</td>
-                            <td>2명</td>
+                            <td>2,000P</td>
+                            <td>2,000P</td>
+                            <td>2,000P</td>
+                            <td>2,000P</td>
+                            <td>2,000P</td>
+                            <td>2,000P</td>
+                            <td>2,000P</td>
+                            <td>2,000P</td>
+                            <td>2,000P</td>
                             <td>8,000P</td>
+                            <td><button type="button" class="btn btn-sm btn-dark">지급</button></td>
                         </tr>
-                        <tr>
-                            <th scope="row">2</th>
+                        <tr>                            
                             <td>영업1팀</td>
                             <td>정용민</td>
                             <td>2,000P</td>
-                            <td>2명</td>
+                            <td>2,000P</td>
+                            <td>2,000P</td>
+                            <td>2,000P</td>
+                            <td>2,000P</td>
+                            <td>2,000P</td>
+                            <td>2,000P</td>
+                            <td>2,000P</td>
+                            <td>2,000P</td>
+                            <td>2,000P</td>
+                            <td>2,000P</td>
                             <td>8,000P</td>
+                            <td><button type="button" class="btn btn-sm btn-dark">지급</button></td>
                         </tr>
-                        <tr>
-                            <th scope="row">3</th>
+                        <tr>                            
                             <td>영업2팀</td>
                             <td>서아인</td>
                             <td>2,000P</td>
-                            <td>2명</td>
+                            <td>2,000P</td>
+                            <td>2,000P</td>
+                            <td>2,000P</td>
+                            <td>2,000P</td>
+                            <td>2,000P</td>
+                            <td>2,000P</td>
+                            <td>2,000P</td>
+                            <td>2,000P</td>
+                            <td>2,000P</td>
+                            <td>2,000P</td>
                             <td>8,000P</td>
+                            <td><button type="button" class="btn btn-sm btn-dark">지급</button></td>
                         </tr>
                         <tr>
-                            <th scope="row">4</th>
                             <td>영업3팀</td>
                             <td>이태웅</td>
                             <td>2,000P</td>
-                            <td>2명</td>
+                            <td>2,000P</td>
+                            <td>2,000P</td>
+                            <td>2,000P</td>
+                            <td>2,000P</td>
+                            <td>2,000P</td>
+                            <td>2,000P</td>
+                            <td>2,000P</td>
+                            <td>2,000P</td>
+                            <td>2,000P</td>
+                            <td>2,000P</td>
                             <td>8,000P</td>
+                            <td><button type="button" class="btn btn-sm btn-dark">지급</button></td>
                         </tr>
+
+
                     </tbody>
                 </table>
             </div>
